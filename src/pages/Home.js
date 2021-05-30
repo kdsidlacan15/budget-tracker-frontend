@@ -1,8 +1,8 @@
-import TransactionList from './../components/TransactionList';
+import AddIncomeList from './../components/AddIncomeList';
 
 
 export default function Home(){
 	return(
-		<TransactionList />
+		<AddIncomeList />
 	)
 }
