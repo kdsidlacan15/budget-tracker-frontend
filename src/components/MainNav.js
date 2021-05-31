@@ -11,6 +11,7 @@ export default function MainNav() {
 		      <Nav.Link as={Link} to="/login">Login</Nav.Link>
 		      <Nav.Link as={Link} to="/register">Register</Nav.Link>
 		      <Nav.Link>Logout</Nav.Link>
+		      <Nav.Link as={Link} to="transactions">Transactions</Nav.Link>
 		    </Nav>
 		    
 		  </Navbar.Collapse>

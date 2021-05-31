@@ -1,6 +1,6 @@
-import IncomeList from './../components/IncomeList'
+import IncomeAddForm from './../components/IncomeAddForm'
 export default function IncomePage(){
 	return(
-		<IncomeList />
+		<IncomeAddForm />
 	)
 }

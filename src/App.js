@@ -5,7 +5,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import IncomePage from './pages/IncomePage'
 import ExpensePage from './pages/ExpensePage'
-
+import ApplicationsProvider from './contexts/ApplicationContext'
+import TransactionListPage from './pages/TransactionListPage'
 import { 
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,8 @@ import {
 function App() {
   return (
     <div className="App">
+    <ApplicationsProvider>
+      
        <Router>
         <MainNav />
         <Switch>
@@ -35,10 +38,14 @@ function App() {
           <Route path="/expense">
             <ExpensePage />
           </Route>
+          <Route path="/transactions">
+            <TransactionListPage />
+          </Route>
         </Switch>
 
 
       </Router>
+    </ApplicationsProvider>
 
     </div>
   );
