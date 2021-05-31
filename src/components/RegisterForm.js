@@ -1,4 +1,4 @@
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Jumbotron} from 'react-bootstrap'
 import {useState} from 'react'
 
 export default function RegisterForm () {
@@ -28,6 +28,15 @@ export default function RegisterForm () {
 			console.log(data)
 		})
 		.catch(err=> console.log(err))
+
+		// reset the form
+		setCredentials({
+			firstName: "",
+			lastName: "",
+			email: "",
+			password: "",
+			confirmPassword: ""
+		})
 	}
 	const handleChange = e => {
 		setCredentials({
@@ -36,7 +45,8 @@ export default function RegisterForm () {
 		})
 	}
 	return(
-
+		<Jumbotron>
+			
 		<Form onSubmit={handleSubmit}>
 	 	 <Form.Group controlId="firstName">
 	   		<Form.Label>First Name:</Form.Label>
@@ -45,6 +55,7 @@ export default function RegisterForm () {
 	    		placeholder="First Name"
 	    		onChange={handleChange}
 	    		value={credentials.firstName}
+	    		size="sm"
 	    	 />
 	 	 </Form.Group>
 
@@ -54,7 +65,8 @@ export default function RegisterForm () {
 	    		type="text" 
 	    		placeholder="Last Name" 
 	    		onChange={handleChange}
-	    		value={credentials.lastName} 
+	    		value={credentials.lastName}
+	    		size="sm" 
 	    	/>
 	 	 </Form.Group>
 
@@ -65,6 +77,7 @@ export default function RegisterForm () {
 	    		placeholder="Email" 
 	    		onChange={handleChange} 
 	    		value={credentials.email}
+	    		size="sm"
 	    	/>
 	 	 </Form.Group>
 
@@ -75,6 +88,7 @@ export default function RegisterForm () {
 	    		placeholder="Password" 
 	    		onChange={handleChange} 
 	    		value={credentials.password}
+	    		size="sm"
 	    	/>
 	 	 </Form.Group>
 
@@ -85,16 +99,18 @@ export default function RegisterForm () {
 	    		placeholder="Confirm Password" 
 	    		onChange={handleChange} 
 	    		value={credentials.confirmPassword}
+	    		size="sm"
 	    	/>
 	 	 </Form.Group>
 
 	 	 {
 	 	 	isLoading ? 
-	  		<Button type="submit"disabled>Submit</Button>
-	  	 :  <Button type="submit">Submit</Button>
+	  		<Button type="submit"disabled size="sm">Submit</Button>
+	  	 :  <Button type="submit" size="sm">Submit</Button>
 	  	
 	 	 }
 
 		</Form>
+		</Jumbotron>
 	)
 }

@@ -1,4 +1,4 @@
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Jumbotron} from 'react-bootstrap'
 import {useState } from 'react'
 
 export default function LoginForm(){
@@ -25,6 +25,12 @@ export default function LoginForm(){
 			console.log(data)
 		})
 		.catch(err => console.log(err))
+
+		//reset the form
+		setCredentials({
+			email: "",
+			password: ""
+		})
 	}
 
 
@@ -37,6 +43,8 @@ export default function LoginForm(){
 	}
 
 	return (
+		<Jumbotron>
+			
 		<Form onSubmit={handleSubmit}>
 			
 			<Form.Group controlId="email">
@@ -44,7 +52,9 @@ export default function LoginForm(){
 				<Form.Control 
 					type="email"
 					onChange={handleChange}
-					value={credentials.email} 
+					value={credentials.email}
+					size="sm"
+
 				/>
 			</Form.Group>
 
@@ -53,17 +63,19 @@ export default function LoginForm(){
 				<Form.Control 
 					type="password"
 					onChange={handleChange}
-					value={credentials.password} 
+					value={credentials.password}
+					size="sm" 
 				/>
 			</Form.Group>
 
 			{
 				isLoading ?
-				<Button type="submit"disabled>Login</Button>
-			:   <Button type="submit">Login</Button>
+				<Button type="submit"disabled size="sm">Login</Button>
+			:   <Button type="submit" size="sm">Login</Button>
 			}
 				
 
 		</Form>
+		</Jumbotron>
 	)
 }

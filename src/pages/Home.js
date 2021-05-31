@@ -1,11 +1,12 @@
-import {Card, Container, Row, Col} from 'react-bootstrap'
+import {Card, Container, Row, Col, Jumbotron} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 export default function Home(){
 	return(
 	<Container className="my-5 p-5">
 		<Row>
 			<Col xs={12} sm={6} md={4} lg={3}>
-				
+				<Jumbotron>
+					
 				<Card style={{ width: '18rem' }}>
   					<Card.Body>
     					<Card.Title>Simple Budget Tracker</Card.Title>
@@ -17,6 +18,7 @@ export default function Home(){
     					<Card.Link as={Link} to='/expense'>Add Expense</Card.Link>
   					</Card.Body>
 				</Card>
+				</Jumbotron>
 			</Col>	
 		</Row>
 	</Container>

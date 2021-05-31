@@ -1,17 +1,17 @@
 import {Card, Form, Button } from 'react-bootstrap'
 import { useState } from 'react'
-export default function IncomeAddForm () {
 
-	const [input,setInput] = useState({
+export default function ExpenseAddForm () {
+
+	const [input, setInput] = useState({
 		category: '',
 		entry: '',
 		value: ''
 	})
 
-
-	const handleSubmit = e =>{
+	const handleSubmit = e => {
 		e.preventDefault()
-		fetch('http://localhost:4000/api/income',{
+		fetch('http://localhost:4000/api/expenses' , {
 			method: "POST",
 			body: JSON.stringify(input),
 			headers: {
@@ -19,10 +19,9 @@ export default function IncomeAddForm () {
 			}
 		})
 		.then(res=> res.json())
-		.then(data => {
+		.then(data=> {
 			console.log(data)
 		})
-
 		//reset the form
 		setInput({
 			category: "",
@@ -31,22 +30,21 @@ export default function IncomeAddForm () {
 		})
 	}
 
-
-	const handleChange = e => {
+	const handleChange = e=> {
 		setInput({
 			...input,
-			[e.target.id]: e.target.value
+			[e.target.id] : e.target.value
 		})
 	}
 	return (
 		<Card>
-		   <Card.Title>Add Income</Card.Title>
+		   <Card.Title>Add Expense</Card.Title>
 			<Form onSubmit={handleSubmit}>
 		  		<Form.Group controlId="category">
 		    		<Form.Label>Category</Form.Label>
 		    		<Form.Control 
 		    			type="text" 
-		    			placeholder="Enter category"
+		    			placeholder="Enter category" 
 		    			onChange={handleChange}
 		    			value={input.category}
 		    			size="sm"
@@ -68,13 +66,13 @@ export default function IncomeAddForm () {
 		    		<Form.Label>Value</Form.Label>
 		    		<Form.Control 
 		    			type="number" 
-		    			placeholder="Enter Amount" 
+		    			placeholder="Enter Amount"
 		    			onChange={handleChange}
 		    			value={input.value}
-		    			size="sm"
+		    			size="sm" 
 		    		/>
 		  		</Form.Group>
-		  <Button variant="info" type="submit" size="sm">
+		  <Button variant="danger" type="submit" size="sm">
 		    Submit
 		  </Button>
 			</Form>
