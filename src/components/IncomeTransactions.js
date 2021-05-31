@@ -1,5 +1,5 @@
 import {Container, Row} from 'react-bootstrap'
-export default function Transaction () {
+export default function IncomeTransaction () {
 	return(
 		<Container>
 			<Row>

@@ -6,7 +6,8 @@ import Register from './pages/Register'
 import IncomePage from './pages/IncomePage'
 import ExpensePage from './pages/ExpensePage'
 import ApplicationsProvider from './contexts/ApplicationContext'
-import TransactionListPage from './pages/TransactionListPage'
+import IncomeTransactionListPage from './pages/IncomeTransactionListPage'
+import ExpenseTransactionListPage from './pages/ExpenseTransactionListPage'
 import { 
   BrowserRouter as Router,
   Switch,
@@ -38,8 +39,11 @@ function App() {
           <Route path="/expense">
             <ExpensePage />
           </Route>
-          <Route path="/transactions">
-            <TransactionListPage />
+          <Route path="/IncomeTransactionListPage">
+            <IncomeTransactionListPage />
+          </Route>
+          <Route path="/ExpenseTransactionListPage">
+            <ExpenseTransactionListPage />
           </Route>
         </Switch>
 

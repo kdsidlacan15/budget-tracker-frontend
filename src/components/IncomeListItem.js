@@ -1,5 +1,5 @@
-import { Container, Row, Col, Table } from 'react-bootstrap'
-import IncomeAddForm from './IncomeAddForm'
+import { Container, Row, Col, Table, Button } from 'react-bootstrap'
+
 
 export default function IncomeListItem () {
 	return (
@@ -29,6 +29,7 @@ export default function IncomeListItem () {
                 <td>250</td>
              </tr>
             </tbody>
+            <Button></Button>
           </Table>
         </Col>
       </Row>

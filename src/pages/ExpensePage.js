@@ -1,6 +1,6 @@
-import ExpenseList from './../components/ExpenseList'
+import ExpenseAddForm from './../components/ExpenseAddForm'
 export default function ExpensePage(){
 	return(
-		<ExpenseList />
+		<ExpenseAddForm />
 	)
 }

@@ -1,4 +1,5 @@
 import {Card, Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import { useState } from 'react'
 export default function IncomeAddForm () {
 
@@ -77,8 +78,23 @@ export default function IncomeAddForm () {
 					    			size="sm"
 					    		/>
 					  		</Form.Group>
-					  			<Button variant="info" type="submit" size="sm">
+					  		
+					  			<Button 
+					  				variant="success" 
+					  				type="submit" 
+					  				size="sm"
+					  				className="mr-2"
+					  			>
 					   			 Submit
+					 			</Button>
+					 			<Button 
+					 				as={Link} 
+					 				to="IncomeTransactionListPage"
+					  				variant="secondary" 
+					  				size="sm"
+					  				className="ml-5"
+					  			>
+					   			 Check Incomes
 					 			</Button>
 					</Form>
 				</Card>
