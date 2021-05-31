@@ -3,6 +3,8 @@ import MainNav from './components/MainNav';
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import IncomePage from './pages/IncomePage'
+import ExpensePage from './pages/ExpensePage'
 
 import { 
   BrowserRouter as Router,
@@ -26,6 +28,12 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/income">
+            <IncomePage />
+          </Route>
+          <Route path="/expense">
+            <ExpensePage />
           </Route>
         </Switch>
 
