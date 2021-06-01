@@ -4,7 +4,19 @@ import { useContext } from "react";
 import { ApplicationContext } from "./../contexts/ApplicationContext";
 
 export default function MainNav() {
-  const { user } = useContext(ApplicationContext);
+  const { user, setUser } = useContext(ApplicationContext);
+
+  const handleClick = () => {
+    setUser({
+      userId: "",
+      isAdmin: false,
+      email: "",
+      firstName: "",
+      lastName: "",
+    });
+
+    localStorage.clear();
+  };
 
   const navLinks = !user.userId ? (
     <>
@@ -17,7 +29,7 @@ export default function MainNav() {
     </>
   ) : (
     <>
-      <Nav.Link>Logout</Nav.Link>
+      <Nav.Link onClick={handleClick}>Logout</Nav.Link>
     </>
   );
 
