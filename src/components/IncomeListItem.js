@@ -1,7 +1,9 @@
 import { Container, Row, Col, Table, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
-export default function IncomeListItem () {
+export default function IncomeListItem ({income}) {
+
 	return (
     <Container className="my-5">
       <Row className="justify-content-md-center">
@@ -17,7 +19,7 @@ export default function IncomeListItem () {
          </thead>
           <tbody>
             <tr>
-              <td>Income</td>
+              <td>{}</td>
               <td>Cash</td>
               <td>Ayuda</td>
               <td>200</td>
@@ -29,8 +31,8 @@ export default function IncomeListItem () {
                 <td>250</td>
              </tr>
             </tbody>
-            <Button></Button>
           </Table>
+          <Button size="sm" as={Link} to='/'>Back</Button>
         </Col>
       </Row>
     </Container>

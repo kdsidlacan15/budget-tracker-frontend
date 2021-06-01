@@ -18,11 +18,11 @@ export default function BudgetTracker () {
     					</Card.Text>
     					<div>
     					<Card.Link as={Link} to='/income'>Add Income</Card.Link>
-    					<Card.Link as={Link} to='/ExpenseTransactionListPage'>View Expenses</Card.Link>
+    					<Card.Link as={Link} to='/expense'>Add Expense</Card.Link>
     					</div>
     					<div>
     					<Card.Link as={Link} to='/IncomeTransactionListPage'>View Incomes</Card.Link>
-    					<Card.Link as={Link} to='/expense'>Add Expense</Card.Link>
+    					<Card.Link as={Link} to='/ExpenseTransactionListPage'>View Expenses</Card.Link>
     					</div>
   					</Card.Body>
 				</Card>

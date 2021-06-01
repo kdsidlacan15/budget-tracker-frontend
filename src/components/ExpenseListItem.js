@@ -1,5 +1,5 @@
 import { Container, Row, Col, Table, Button } from 'react-bootstrap'
-
+import { Link } from 'react-router-dom'
 
 export default function ExpenseListItem () {
 	return (
@@ -29,8 +29,8 @@ export default function ExpenseListItem () {
                 <td>5000</td>
              </tr>
             </tbody>
-            <Button></Button>
           </Table>
+          <Button size="sm" as={Link} to='/'>Back</Button>
         </Col>
       </Row>
     </Container>
