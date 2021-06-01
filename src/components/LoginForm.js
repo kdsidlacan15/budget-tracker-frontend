@@ -2,7 +2,7 @@ import { Form, Button, Jumbotron } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { ApplicationContext } from "../contexts/ApplicationContext";
 
-export default function LoginForm() {
+export default function LoginForm({ setIsRedirect }) {
   const { setUser } = useContext(ApplicationContext);
 
   const [credentials, setCredentials] = useState({
@@ -35,8 +35,9 @@ export default function LoginForm() {
       })
       .then((token) => {
         let access = token.token;
-        console.log(access);
-        return fetch("http://localhost:4000/api/users", {
+        localStorage.setItem("token", access);
+        // console.log(access);
+        return fetch("http://localhost:4000/api/users/details", {
           headers: {
             Authorization: `Bearer ${access}`,
           },
@@ -44,7 +45,7 @@ export default function LoginForm() {
       })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
+        console.log(data);
         const { firstName, lastName, email, isAdmin } = data;
         setUser({
           userId: data._id,
@@ -53,13 +54,14 @@ export default function LoginForm() {
           email,
           isAdmin,
         });
+        setIsRedirect(true);
       })
       .catch((err) => console.log(err));
     // reset the form
-    setCredentials({
-      email: "",
-      password: "",
-    });
+    // setCredentials({
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   const handleChange = (e) => {
