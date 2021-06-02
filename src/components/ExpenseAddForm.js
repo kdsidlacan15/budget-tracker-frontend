@@ -43,7 +43,7 @@ export default function ExpenseAddForm() {
       <Row className="justify-content-md-center">
         <Col md="auto">
           <Card>
-            <Card.Title>Add Expense</Card.Title>
+            <Card.Title className="m-auto">Add Expense</Card.Title>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="category">
                 <Form.Label>Category</Form.Label>
@@ -82,7 +82,7 @@ export default function ExpenseAddForm() {
               </Button>
               <Button
                 as={Link}
-                to="ExpenseTransactionListPage"
+                to="ExpenseTable"
                 variant="secondary"
                 size="sm"
                 className="ml-5"

@@ -88,7 +88,7 @@ export default function IncomeAddForm() {
               </Button>
               <Button
                 as={Link}
-                to="IncomeTransactionListPage"
+                to="IncomeTable"
                 variant="secondary"
                 size="sm"
                 className="ml-5"

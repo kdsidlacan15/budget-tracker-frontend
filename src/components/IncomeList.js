@@ -25,14 +25,14 @@ export default function IncomeList() {
 
   const incomeDisplay = income.map((income) => {
     return (
-      <Table>
-        <thead>
+      <tr>
+        <td>
           <IncomeListItem
             income={income}
             setLastDeletedIncome={setLastDeletedIncome}
           />
-        </thead>
-      </Table>
+        </td>
+      </tr>
     );
   });
 

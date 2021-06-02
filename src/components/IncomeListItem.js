@@ -16,42 +16,60 @@ export default function IncomeListItem({ income, setLastDeletedIncome }) {
     });
   };
   return (
-    <Col md="auto">
-      <thead>
+    <Table striped bordered hover size="sm">
+      <tbody>
         <tr>
+          <th></th>
           <th>Transaction</th>
           <th>Category</th>
           <th>Entry</th>
           <th>Value</th>
+          <th>
+            {" "}
+            <Button
+              variant="outline-info"
+              className="mx-2"
+              size="sm"
+              as={Link}
+              to="/IncomeUpdate"
+            >
+              Update
+            </Button>{" "}
+          </th>
         </tr>
-      </thead>
-      <tbody>
         <tr>
+          <td>
+            {" "}
+            <Button
+              variant="outline-dark"
+              className="mx-2"
+              size="sm"
+              as={Link}
+              to="/Profile"
+            >
+              Back
+            </Button>{" "}
+          </td>
           <td>Income</td>
           <td>{income.category}</td>
           <td>{income.entry}</td>
           <td>{income.value}</td>
+
+          <td>
+            {" "}
+            <Button
+              variant="outline-danger"
+              size="sm"
+              as={Link}
+              to="/IncomeTransactionListPage"
+              onClick={handleClickDelete}
+            >
+              Delete
+            </Button>{" "}
+          </td>
         </tr>
       </tbody>
-      <Button
-        variant="light"
-        className="mx-2"
-        size="sm"
-        as={Link}
-        to="/LoggedUserPage"
-      >
-        Back
-      </Button>
-      <Button
-        variant="danger"
-        size="sm"
-        as={Link}
-        to="/IncomeTransactionListPage"
-        onClick={handleClickDelete}
-      >
-        Delete
-      </Button>
-    </Col>
+    </Table>
 
     // <Card>
     //   <Card.Body>
