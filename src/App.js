@@ -10,7 +10,7 @@ import IncomeTransactionListPage from "./pages/IncomeTransactionListPage";
 import ExpenseTransactionListPage from "./pages/ExpenseTransactionListPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoggedUserPage from "./pages/LoggedUserPage";
-import IncomeUpdate from "./pages/IncomeUpdate";
+import IncomeSingle from "./pages/IncomeSingle";
 import Profile from "./pages/Profile";
 import IncomeTable from "./pages/IncomeTable";
 import ExpenseTable from "./pages/ExpenseTable";
@@ -47,8 +47,8 @@ function App() {
             <Route path="/LoggedUserPage">
               <LoggedUserPage />
             </Route>
-            <Route path="/IncomeUpdate">
-              <IncomeUpdate />
+            <Route path="/IncomeSingle">
+              <IncomeSingle />
             </Route>
             <Route path="/Profile">
               <Profile />

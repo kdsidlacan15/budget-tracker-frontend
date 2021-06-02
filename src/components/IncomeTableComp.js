@@ -1,6 +1,7 @@
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import UpdateIncome from "./UpdateIncome";
 export default function IncomeTableComp() {
   const [income, setIncome] = useState([]);
   const [lastDeletedIncome, setLastDeletedIncome] = useState({});
@@ -58,7 +59,7 @@ export default function IncomeTableComp() {
               className="mx-1"
               size="sm"
               as={Link}
-              to="/IncomeUpdate"
+              to="/IncomeSingle"
             >
               Update
             </Button>{" "}

@@ -19,7 +19,7 @@ export default function BudgetTracker() {
               to="/register"
               Register
             >
-              Get Started
+              Register Now!
             </Button>
           </p>
         </Jumbotron>

@@ -58,7 +58,7 @@ export default function ExpenseTableComp() {
               className="mx-1"
               size="sm"
               as={Link}
-              to="/ExpenseUpdate"
+              to="/Update"
             >
               Update
             </Button>{" "}
