@@ -25,12 +25,14 @@ export default function IncomeList() {
 
   const incomeDisplay = income.map((income) => {
     return (
-      <Col xs={12} sm={6} md={4} lg={3} key={income._id}>
-        <IncomeListItem
-          income={income}
-          setLastDeletedIncome={setLastDeletedIncome}
-        />
-      </Col>
+      <Table>
+        <thead>
+          <IncomeListItem
+            income={income}
+            setLastDeletedIncome={setLastDeletedIncome}
+          />
+        </thead>
+      </Table>
     );
   });
 

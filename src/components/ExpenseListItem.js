@@ -38,7 +38,7 @@ export default function ExpenseListItem({ expense, setLastDeletedExpense }) {
               </tr>
             </tbody>
           </Table>
-          <Button variant="light" size="sm" as={Link} to="/">
+          <Button variant="light" size="sm" as={Link} to="/LoggedUserPage">
             Back
           </Button>
           <Button

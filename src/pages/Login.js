@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Login() {
   const [isRedirect, setIsRedirect] = useState(false);
   return isRedirect ? (
-    <Redirect to="/" />
+    <Redirect to="LoggedUserPage" />
   ) : (
     <Container className="my-5">
       <Row>

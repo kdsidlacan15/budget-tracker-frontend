@@ -16,42 +16,43 @@ export default function IncomeListItem({ income, setLastDeletedIncome }) {
     });
   };
   return (
-    <Container className="my-5">
-      <Row className="justify-content-md-center">
-        <Col md="auto">
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>Transaction</th>
-                <th>Category</th>
-                <th>Entry</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Income</td>
-                <td>{income.category}</td>
-                <td>{income.entry}</td>
-                <td>{income.value}</td>
-              </tr>
-            </tbody>
-          </Table>
-          <Button variant="light" className="mx-2" size="sm" as={Link} to="/">
-            Back
-          </Button>
-          <Button
-            variant="danger"
-            size="sm"
-            as={Link}
-            to="/"
-            onClick={handleClickDelete}
-          >
-            Delete
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+    <Col md="auto">
+      <thead>
+        <tr>
+          <th>Transaction</th>
+          <th>Category</th>
+          <th>Entry</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Income</td>
+          <td>{income.category}</td>
+          <td>{income.entry}</td>
+          <td>{income.value}</td>
+        </tr>
+      </tbody>
+      <Button
+        variant="light"
+        className="mx-2"
+        size="sm"
+        as={Link}
+        to="/LoggedUserPage"
+      >
+        Back
+      </Button>
+      <Button
+        variant="danger"
+        size="sm"
+        as={Link}
+        to="/IncomeTransactionListPage"
+        onClick={handleClickDelete}
+      >
+        Delete
+      </Button>
+    </Col>
+
     // <Card>
     //   <Card.Body>
     //     <Card.Title>Incomes</Card.Title>
