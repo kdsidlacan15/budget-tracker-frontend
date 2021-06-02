@@ -1,9 +1,20 @@
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { ApplicationContext } from "../contexts/ApplicationContext";
 import { useContext } from "react";
-export default function IncomeListItem() {
-  const { income } = useContext(ApplicationContext);
+import { ApplicationContext } from "../contexts/ApplicationContext";
+
+export default function IncomeListItem({ income, setLastDeletedIncome }) {
+  const { user } = useContext(ApplicationContext);
+
+  const handleClickDelete = () => {
+    let access = localStorage.getItem("token");
+    fetch(`http://localhost:4000/api/income/${income._id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${access}`,
+      },
+    });
+  };
   return (
     <Container className="my-5">
       <Row className="justify-content-md-center">
@@ -11,7 +22,7 @@ export default function IncomeListItem() {
           <Table striped bordered hover size="sm">
             <thead>
               <tr>
-                <th>Transaction Type</th>
+                <th>Transaction</th>
                 <th>Category</th>
                 <th>Entry</th>
                 <th>Value</th>
@@ -19,24 +30,41 @@ export default function IncomeListItem() {
             </thead>
             <tbody>
               <tr>
-                <td>{income.category}</td>
-                <td>Cash</td>
-                <td>Ayuda</td>
-                <td>200</td>
-              </tr>
-              <tr>
                 <td>Income</td>
-                <td>Loan</td>
-                <td>Debit</td>
-                <td>250</td>
+                <td>{income.category}</td>
+                <td>{income.entry}</td>
+                <td>{income.value}</td>
               </tr>
             </tbody>
           </Table>
-          <Button size="sm" as={Link} to="/">
+          <Button variant="light" className="mx-2" size="sm" as={Link} to="/">
             Back
+          </Button>
+          <Button
+            variant="danger"
+            size="sm"
+            as={Link}
+            to="/"
+            onClick={handleClickDelete}
+          >
+            Delete
           </Button>
         </Col>
       </Row>
     </Container>
+    // <Card>
+    //   <Card.Body>
+    //     <Card.Title>Incomes</Card.Title>
+    //     <Card.Text>Category: {income.category}</Card.Text>
+    //     <Card.Text>Entry: {income.entry}</Card.Text>
+    //     <Card.Text>Value: {income.value}</Card.Text>
+    //     <Button className="my-1" size="sm" variant="info" block>
+    //       Update
+    //     </Button>
+    //     <Button className="my-1" size="sm" variant="danger" block>
+    //       Delete
+    //     </Button>
+    //   </Card.Body>
+    // </Card>
   );
 }
