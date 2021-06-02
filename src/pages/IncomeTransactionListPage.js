@@ -1,7 +1,5 @@
-import IncomeListItem from './../components/IncomeListItem'
+import IncomeListItem from "./../components/IncomeListItem";
 
-export default function IncomeTransactionListPage(){
-	return(
-		<IncomeListItem />
-	)
+export default function IncomeTransactionListPage() {
+  return <IncomeListItem />;
 }

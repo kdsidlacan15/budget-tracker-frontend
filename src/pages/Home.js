@@ -1,6 +1,4 @@
-import BudgetTracker from './../components/BudgetTracker'
-export default function Home(){
-	return(
-		<BudgetTracker />
-	)
+import BudgetTracker from "./../components/BudgetTracker";
+export default function Home() {
+  return <BudgetTracker />;
 }
