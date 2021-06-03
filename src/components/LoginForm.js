@@ -38,7 +38,7 @@ export default function LoginForm({ setIsRedirect }) {
         localStorage.setItem("token", access);
         // console.log(access);
         return fetch(
-          "https://stark-reef-70845.herokuapp.com//api/users/details",
+          "https://stark-reef-70845.herokuapp.com/api/users/details",
           {
             headers: {
               Authorization: `Bearer ${access}`,
