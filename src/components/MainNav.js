@@ -20,6 +20,9 @@ export default function MainNav() {
 
   const navLinks = !user.userId ? (
     <>
+      <Nav.Link as={Link} to="/">
+        Home
+      </Nav.Link>
       <Nav.Link as={Link} to="/login">
         Login
       </Nav.Link>
@@ -29,6 +32,15 @@ export default function MainNav() {
     </>
   ) : (
     <>
+      <Nav.Link as={Link} to="/IncomeTable">
+        Incomes
+      </Nav.Link>
+      <Nav.Link as={Link} to="/ExpenseTable">
+        Expenses
+      </Nav.Link>
+      <Nav.Link as={Link} to="/Profile">
+        Add Transactions
+      </Nav.Link>
       <Nav.Link as={Link} to="/" onClick={handleClick}>
         Logout
       </Nav.Link>
@@ -37,7 +49,7 @@ export default function MainNav() {
 
   return (
     <Navbar bg="light" expand="md">
-      <Navbar.Brand>Transactions Tracker</Navbar.Brand>
+      <Navbar.Brand>Simply™</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">{navLinks}</Nav>

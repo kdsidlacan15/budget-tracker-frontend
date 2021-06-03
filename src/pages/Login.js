@@ -8,12 +8,14 @@ export default function Login() {
   return isRedirect ? (
     <Redirect to="Profile" />
   ) : (
-    <Container className="my-5">
-      <Row>
-        <Col className="mx-auto" xs={12} sm={10} md={6}>
-          <LoginForm setIsRedirect={setIsRedirect} />
-        </Col>
-      </Row>
-    </Container>
+    <div className="background-lightseagreen">
+      <Container className="my-5">
+        <Row>
+          <Col className="mx-auto" xs={12} sm={10} md={6}>
+            <LoginForm setIsRedirect={setIsRedirect} />
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }

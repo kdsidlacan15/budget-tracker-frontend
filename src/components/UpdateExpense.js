@@ -32,7 +32,7 @@ export default function UpdateExpense({ expense, setLastUpdatedExpense }) {
 
   return (
     <Row>
-      <Card>
+      <Card className="background-lightseagreen">
         <Card.Body>
           <Form className="smaller-input" onSubmit={handleSubmit}>
             <Form.Group className="smaller-input" controlId="category">

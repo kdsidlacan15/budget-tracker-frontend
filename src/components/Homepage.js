@@ -6,14 +6,15 @@ export default function BudgetTracker() {
     <Container className="my-5 p-5">
       <Row>
         <Jumbotron>
-          <h1>Simple Transactions Tracker</h1>
+          <h1>"Simply" Transactions Tracker</h1>
           <p>
             This Simple Transaction Tracker app lets you record your income and
-            expenses with ease.
+            expenses with ease. Keep track of your budget, No Fuzz.
+            Straightforward. "Simply"
           </p>
           <p>
             <Button variant="primary" size="sm" as={Link} to="/register">
-              Register Now!
+              Sign up for free!
             </Button>
           </p>
         </Jumbotron>

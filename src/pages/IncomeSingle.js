@@ -22,24 +22,26 @@ export default function IncomeSingle() {
   }, [lastUpdatedIncome]);
 
   return (
-    <Container>
-      <Row className="my-5">
-        <Col xs={12} sm={10} md={6} className="mx-auto">
-          {isLoading ? (
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden"></span>
-            </Spinner>
-          ) : (
-            <IncomeListItem income={income} />
-          )}
-        </Col>
-        <Col>
-          <UpdateIncome
-            income={income}
-            setLastUpdatedIncome={setLastUpdatedIncome}
-          />
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <Container>
+        <Row className="my-5">
+          <Col xs={12} sm={10} md={6} className="mx-auto">
+            {isLoading ? (
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden"></span>
+              </Spinner>
+            ) : (
+              <IncomeListItem income={income} />
+            )}
+          </Col>
+          <Col>
+            <UpdateIncome
+              income={income}
+              setLastUpdatedIncome={setLastUpdatedIncome}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }

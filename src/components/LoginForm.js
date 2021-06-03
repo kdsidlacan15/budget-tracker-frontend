@@ -75,7 +75,7 @@ export default function LoginForm({ setIsRedirect }) {
   };
 
   return (
-    <Jumbotron>
+    <div className="background-lightseagreen">
       <Form className="smaller-input" onSubmit={handleSubmit}>
         <Form.Group className="smaller-input" controlId="email">
           <Form.Label className="smaller-input">Email:</Form.Label>
@@ -100,15 +100,20 @@ export default function LoginForm({ setIsRedirect }) {
         </Form.Group>
 
         {isLoading ? (
-          <Button size="sm" type="submit" disabled>
+          <Button size="sm" type="submit" variant="outline-primary" disabled>
             Login
           </Button>
         ) : (
-          <Button className="smaller-input" size="sm" type="submit">
+          <Button
+            className="smaller-input"
+            size="sm"
+            type="submit"
+            variant="outline-primary"
+          >
             Login
           </Button>
         )}
       </Form>
-    </Jumbotron>
+    </div>
   );
 }

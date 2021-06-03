@@ -51,7 +51,7 @@ export default function RegisterForm({ setIsRedirect }) {
     });
   };
   return (
-    <Jumbotron>
+    <div className="background-lightseagreen">
       <Form className="smaller-input" onSubmit={handleSubmit}>
         <Form.Group className="smaller-input" controlId="firstName">
           <Form.Label className="smaller-input">First Name:</Form.Label>
@@ -118,11 +118,16 @@ export default function RegisterForm({ setIsRedirect }) {
             Submit
           </Button>
         ) : (
-          <Button className="smaller-input" type="submit" size="sm">
+          <Button
+            className="smaller-input"
+            type="submit"
+            size="sm"
+            variant="outline-primary"
+          >
             Submit
           </Button>
         )}
       </Form>
-    </Jumbotron>
+    </div>
   );
 }

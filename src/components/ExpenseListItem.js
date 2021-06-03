@@ -7,7 +7,7 @@ export default function ExpenseListItem({ expense, setLastDeletedExpense }) {
   return (
     <Container>
       <Col>
-        <Card>
+        <Card className="background-lightseagreen">
           <Card.Body>
             <Card.Title>Expenses</Card.Title>
             <Card.Text>Category: {expense.category}</Card.Text>

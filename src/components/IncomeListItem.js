@@ -7,7 +7,7 @@ export default function IncomeListItem({ income }) {
   return (
     <Container>
       <Col>
-        <Card>
+        <Card className="background-lightseagreen">
           <Card.Body>
             <Card.Title>Incomes</Card.Title>
             <Card.Text>Category: {income.category}</Card.Text>

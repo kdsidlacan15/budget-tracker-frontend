@@ -42,7 +42,7 @@ export default function ExpenseAddForm() {
     <Container className="my-5">
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <Card className="smaller-input">
+          <Card className="smaller-input background-lightseagreen">
             <Card.Title className="m-auto">Add Expense</Card.Title>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="smaller-input m-auto" controlId="category">
