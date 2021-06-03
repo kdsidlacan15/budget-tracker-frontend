@@ -45,7 +45,7 @@ export default function ExpenseAddForm() {
           <Card className="smaller-input">
             <Card.Title className="m-auto">Add Expense</Card.Title>
             <Form onSubmit={handleSubmit}>
-              <Form.Group className="smaller-input" controlId="category">
+              <Form.Group className="smaller-input m-auto" controlId="category">
                 <Form.Label className="smaller-input">Category</Form.Label>
                 <Form.Control
                   type="text"

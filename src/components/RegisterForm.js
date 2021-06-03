@@ -1,7 +1,7 @@
 import { Form, Button, Jumbotron } from "react-bootstrap";
 import { useState } from "react";
 
-export default function RegisterForm() {
+export default function RegisterForm({ setIsRedirect }) {
   const [credentials, setCredentials] = useState({
     firstName: "",
     lastName: "",
@@ -26,6 +26,7 @@ export default function RegisterForm() {
         setIsLoading(false);
         if (res.status === 200) {
           alert("Registration Successfull");
+          setIsRedirect(true);
           return res.json();
         } else {
           alert("Invalid Credentials, Please Check your Input");
@@ -33,12 +34,6 @@ export default function RegisterForm() {
         }
       })
       .catch((err) => console.log(err));
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setIsLoading(false);
-    //     alert("Registration Successfull");
-    //   })
-    //   .catch((err) => console.log(err));
 
     // reset the form
     setCredentials({
