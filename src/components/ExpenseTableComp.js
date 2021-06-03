@@ -6,7 +6,7 @@ export default function ExpenseTableComp() {
   const [lastDeletedExpense, setLastDeletedExpense] = useState({});
   useEffect(() => {
     let access = localStorage.getItem("token");
-    fetch("http://localhost:4000/api/expenses/", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/expenses/", {
       headers: {
         Authorization: `Bearer ${access}`,
       },

@@ -7,7 +7,7 @@ export default function IncomeList() {
 
   useEffect(() => {
     let access = localStorage.getItem("token");
-    fetch("http://localhost:4000/api/income/", {
+    fetch("https://stark-reef-70845.herokuapp.com/income/", {
       headers: {
         Authorization: `Bearer ${access}`,
       },

@@ -7,7 +7,7 @@ export default function IncomeTableComp() {
   const [lastDeletedIncome, setLastDeletedIncome] = useState({});
   useEffect(() => {
     let access = localStorage.getItem("token");
-    fetch("http://localhost:4000/api/income/", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/income/", {
       headers: {
         Authorization: `Bearer ${access}`,
       },
@@ -24,7 +24,7 @@ export default function IncomeTableComp() {
   const incomeDisplay = income.map((income, index) => {
     const handleClickDelete = () => {
       let access = localStorage.getItem("token");
-      fetch(`http://localhost:4000/api/income/${income._id}`, {
+      fetch(`https://stark-reef-70845.herokuapp.com/api/income/${income._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

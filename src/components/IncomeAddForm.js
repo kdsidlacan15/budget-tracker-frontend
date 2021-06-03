@@ -11,7 +11,7 @@ export default function IncomeAddForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let access = localStorage.getItem("token");
-    fetch("http://localhost:4000/api/income", {
+    fetch("https://stark-reef-70845.herokuapp.com/income", {
       method: "POST",
       body: JSON.stringify(input),
       headers: {

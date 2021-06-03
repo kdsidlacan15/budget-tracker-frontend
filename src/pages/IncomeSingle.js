@@ -11,7 +11,7 @@ export default function IncomeSingle() {
   const [lastUpdatedIncome, setLastUpdatedIncome] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/income/${id}`)
+    fetch(`https://stark-reef-70845.herokuapp.com/api/income/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setIncome(data);

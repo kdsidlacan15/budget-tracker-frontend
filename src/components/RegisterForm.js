@@ -14,7 +14,7 @@ export default function RegisterForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch("http://localhost:4000/api/users", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/users", {
       method: "POST",
       body: JSON.stringify(credentials),
       headers: {

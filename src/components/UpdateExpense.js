@@ -14,14 +14,17 @@ export default function UpdateExpense({ expense, setLastUpdatedExpense }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:4000/api/expenses/${expense._id}`, {
-      method: "PUT",
-      body: JSON.stringify(currentExpense),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      `https://stark-reef-70845.herokuapp.com/api/expenses/${expense._id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(currentExpense),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => setLastUpdatedExpense(data))
       .catch((err) => console.log(err));

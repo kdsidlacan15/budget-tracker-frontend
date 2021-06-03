@@ -11,7 +11,7 @@ export default function ExpenseSingle() {
   const [lastUpdatedExpense, setLastUpdatedExpense] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/expenses/${id}`)
+    fetch(`https://stark-reef-70845.herokuapp.com/api/expenses/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setExpense(data);

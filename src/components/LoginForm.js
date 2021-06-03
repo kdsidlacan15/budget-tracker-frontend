@@ -15,7 +15,7 @@ export default function LoginForm({ setIsRedirect }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch("http://localhost:4000/api/users/login", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/users/login", {
       method: "POST",
       body: JSON.stringify(credentials),
       headers: {
@@ -37,11 +37,14 @@ export default function LoginForm({ setIsRedirect }) {
         let access = token.token;
         localStorage.setItem("token", access);
         // console.log(access);
-        return fetch("http://localhost:4000/api/users/details", {
-          headers: {
-            Authorization: `Bearer ${access}`,
-          },
-        });
+        return fetch(
+          "https://stark-reef-70845.herokuapp.com//api/users/details",
+          {
+            headers: {
+              Authorization: `Bearer ${access}`,
+            },
+          }
+        );
       })
       .then((res) => res.json())
       .then((data) => {

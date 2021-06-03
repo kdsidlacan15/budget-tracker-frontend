@@ -14,7 +14,7 @@ export default function UpdateIncome({ income, setLastUpdatedIncome }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:4000/api/income/${income._id}`, {
+    fetch(`https://stark-reef-70845.herokuapp.com/api/income/${income._id}`, {
       method: "PUT",
       body: JSON.stringify(currentIncome),
       headers: {

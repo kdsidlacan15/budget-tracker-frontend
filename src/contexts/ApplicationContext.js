@@ -12,7 +12,7 @@ export default function ApplicationsProvider(props) {
   });
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/users/details", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/users/details", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

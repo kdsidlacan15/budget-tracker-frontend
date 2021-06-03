@@ -12,7 +12,7 @@ export default function ExpenseAddForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let access = localStorage.getItem("token");
-    fetch("http://localhost:4000/api/expenses", {
+    fetch("https://stark-reef-70845.herokuapp.com/api/expenses", {
       method: "POST",
       body: JSON.stringify(input),
       headers: {
