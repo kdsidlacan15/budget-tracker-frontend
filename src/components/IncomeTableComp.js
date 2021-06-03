@@ -65,15 +65,6 @@ export default function IncomeTableComp() {
             >
               Update
             </Button>{" "}
-            <Button
-              className="mx-1"
-              variant="outline-dark"
-              size="sm"
-              as={Link}
-              to="/Profile"
-            >
-              Back
-            </Button>{" "}
           </td>
         </tr>
       </tbody>
