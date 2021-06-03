@@ -48,7 +48,7 @@ export default function ExpenseTableComp() {
             {" "}
             <Button
               variant="outline-danger"
-              className="mx-1"
+              className="mx-1 smaller-input"
               size="sm"
               as={Link}
               to="/ExpenseTable"
@@ -58,7 +58,7 @@ export default function ExpenseTableComp() {
             </Button>{" "}
             <Button
               variant="outline-info"
-              className="mx-1"
+              className="mx-1 smaller-input"
               size="sm"
               as={Link}
               to={`/expense/${expense._id}`}
@@ -71,10 +71,10 @@ export default function ExpenseTableComp() {
     );
   });
   return (
-    <Container>
+    <Container className="my-4">
       <Row>
         <Col>
-          <Table striped bordered hover size="sm">
+          <Table className="smaller-input" striped bordered hover size="sm">
             <thead>
               <tr>
                 <th>Transaction</th>
@@ -84,7 +84,7 @@ export default function ExpenseTableComp() {
                 <th>Manage Transaction</th>
                 <th>
                   <Button
-                    className="mx-1"
+                    className="mx-1 smaller-input"
                     variant="outline-dark"
                     size="sm"
                     as={Link}

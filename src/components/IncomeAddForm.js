@@ -42,12 +42,13 @@ export default function IncomeAddForm() {
     <Container className="my-5">
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <Card>
+          <Card className="smaller-input">
             <Card.Title className="m-auto">Add Income</Card.Title>
             <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="category">
-                <Form.Label>Category</Form.Label>
+              <Form.Group className="smaller-input" controlId="category">
+                <Form.Label className="smaller-input">Category</Form.Label>
                 <Form.Control
+                  className="smaller-input"
                   type="text"
                   placeholder="Enter category"
                   onChange={handleChange}
@@ -56,9 +57,10 @@ export default function IncomeAddForm() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="entry">
-                <Form.Label>Entry</Form.Label>
+              <Form.Group className="smaller-input" controlId="entry">
+                <Form.Label className="smaller-input">Entry</Form.Label>
                 <Form.Control
+                  className="smaller-input"
                   type="text"
                   placeholder="Entry"
                   onChange={handleChange}
@@ -67,9 +69,10 @@ export default function IncomeAddForm() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="value">
-                <Form.Label>Value</Form.Label>
+              <Form.Group className="smaller-input" controlId="value">
+                <Form.Label className="smaller-input">Value</Form.Label>
                 <Form.Control
+                  className="smaller-input"
                   type="number"
                   placeholder="Enter Amount"
                   onChange={handleChange}
@@ -82,7 +85,7 @@ export default function IncomeAddForm() {
                 variant="success"
                 type="submit"
                 size="sm"
-                className="mr-2"
+                className="smaller-input mr-1"
               >
                 Submit
               </Button>
@@ -91,7 +94,7 @@ export default function IncomeAddForm() {
                 to="IncomeTable"
                 variant="secondary"
                 size="sm"
-                className="ml-5"
+                className="smaller-input"
               >
                 Check Incomes
               </Button>

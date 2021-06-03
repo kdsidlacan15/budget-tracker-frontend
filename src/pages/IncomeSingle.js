@@ -23,7 +23,7 @@ export default function IncomeSingle() {
 
   return (
     <Container>
-      <Row>
+      <Row className="my-5">
         <Col xs={12} sm={10} md={6} className="mx-auto">
           {isLoading ? (
             <Spinner animation="border" role="status">

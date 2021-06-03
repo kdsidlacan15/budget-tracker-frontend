@@ -1,4 +1,4 @@
-import { Card, Form, Button } from "react-bootstrap";
+import { Card, Form, Button, Row } from "react-bootstrap";
 import { useState } from "react";
 
 export default function UpdateExpense({ expense, setLastUpdatedExpense }) {
@@ -31,28 +31,48 @@ export default function UpdateExpense({ expense, setLastUpdatedExpense }) {
   };
 
   return (
-    <Card>
-      <Card.Body>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="category">
-            <Form.Label>Category:</Form.Label>
-            <Form.Control type="text" onChange={handleChange} />
-          </Form.Group>
-          <Form.Group controlId="entry">
-            <Form.Label>Entry:</Form.Label>
-            <Form.Control type="text" onChange={handleChange} />
-          </Form.Group>
+    <Row>
+      <Card>
+        <Card.Body>
+          <Form className="smaller-input" onSubmit={handleSubmit}>
+            <Form.Group className="smaller-input" controlId="category">
+              <Form.Label className="smaller-input">Category:</Form.Label>
+              <Form.Control
+                className="smaller-input"
+                type="text"
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className="smaller-input" controlId="entry">
+              <Form.Label className="smaller-input">Entry:</Form.Label>
+              <Form.Control
+                className="smaller-input"
+                type="text"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="value">
-            <Form.Label>Value:</Form.Label>
-            <Form.Control type="number" min="0" onChange={handleChange} />
-          </Form.Group>
+            <Form.Group className="smaller-input" controlId="value">
+              <Form.Label className="smaller-input">Value:</Form.Label>
+              <Form.Control
+                className="smaller-input"
+                type="number"
+                min="0"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Button type="submit" size="sm">
-            Update
-          </Button>
-        </Form>
-      </Card.Body>
-    </Card>
+            <Button
+              variant="success"
+              className="smaller-input"
+              type="submit"
+              size="sm"
+            >
+              Update
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Row>
   );
 }

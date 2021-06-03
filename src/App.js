@@ -12,6 +12,7 @@ import ExpenseSingle from "./pages/ExpenseSingle";
 import Profile from "./pages/Profile";
 import IncomeTable from "./pages/IncomeTable";
 import ExpenseTable from "./pages/ExpenseTable";
+import "./App.css";
 
 function App() {
   return (

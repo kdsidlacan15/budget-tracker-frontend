@@ -57,54 +57,59 @@ export default function RegisterForm() {
   };
   return (
     <Jumbotron>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="firstName">
-          <Form.Label>First Name:</Form.Label>
+      <Form className="smaller-input" onSubmit={handleSubmit}>
+        <Form.Group className="smaller-input" controlId="firstName">
+          <Form.Label className="smaller-input">First Name:</Form.Label>
           <Form.Control
             type="text"
             placeholder="First Name"
             onChange={handleChange}
             value={credentials.firstName}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
-        <Form.Group controlId="lastName">
-          <Form.Label>Last Name:</Form.Label>
+        <Form.Group className="smaller-input" controlId="lastName">
+          <Form.Label className="smaller-input">Last Name:</Form.Label>
           <Form.Control
             type="text"
             placeholder="Last Name"
             onChange={handleChange}
             value={credentials.lastName}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
-        <Form.Group controlId="email">
-          <Form.Label>Email:</Form.Label>
+        <Form.Group className="smaller-input" controlId="email">
+          <Form.Label className="smaller-input">Email:</Form.Label>
           <Form.Control
             type="email"
             placeholder="Email"
             onChange={handleChange}
             value={credentials.email}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
-        <Form.Group controlId="password">
-          <Form.Label>Password:</Form.Label>
+        <Form.Group className="smaller-input" controlId="password">
+          <Form.Label className="smaller-input">Password:</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
             onChange={handleChange}
             value={credentials.password}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
-        <Form.Group controlId="confirmPassword">
-          <Form.Label>Confirm Password:</Form.Label>
+        <Form.Group className="smaller-input" controlId="confirmPassword">
+          <Form.Label className="smaller-input">Confirm Password:</Form.Label>
           <Form.Control
+            className="smaller-input"
             type="password"
             placeholder="Confirm Password"
             onChange={handleChange}
@@ -114,11 +119,11 @@ export default function RegisterForm() {
         </Form.Group>
 
         {isLoading ? (
-          <Button type="submit" disabled size="sm">
+          <Button className="smaller-input" type="submit" disabled size="sm">
             Submit
           </Button>
         ) : (
-          <Button type="submit" size="sm">
+          <Button className="smaller-input" type="submit" size="sm">
             Submit
           </Button>
         )}

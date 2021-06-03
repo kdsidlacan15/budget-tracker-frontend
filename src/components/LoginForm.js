@@ -76,24 +76,26 @@ export default function LoginForm({ setIsRedirect }) {
 
   return (
     <Jumbotron>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="email">
-          <Form.Label>Email:</Form.Label>
+      <Form className="smaller-input" onSubmit={handleSubmit}>
+        <Form.Group className="smaller-input" controlId="email">
+          <Form.Label className="smaller-input">Email:</Form.Label>
           <Form.Control
             type="email"
             onChange={handleChange}
             value={credentials.email}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
-        <Form.Group controlId="password">
-          <Form.Label>Password:</Form.Label>
+        <Form.Group className="smaller-input" controlId="password">
+          <Form.Label className="smaller-input">Password:</Form.Label>
           <Form.Control
             type="password"
             onChange={handleChange}
             value={credentials.password}
             size="sm"
+            className="smaller-input"
           />
         </Form.Group>
 
@@ -102,7 +104,7 @@ export default function LoginForm({ setIsRedirect }) {
             Login
           </Button>
         ) : (
-          <Button size="sm" type="submit">
+          <Button className="smaller-input" size="sm" type="submit">
             Login
           </Button>
         )}
