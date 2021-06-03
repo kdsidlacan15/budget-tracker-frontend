@@ -1,4 +1,4 @@
-import { Form, Button, Jumbotron } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { ApplicationContext } from "../contexts/ApplicationContext";
 

@@ -1,4 +1,4 @@
-import { Form, Button, Jumbotron } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
 export default function RegisterForm({ setIsRedirect }) {

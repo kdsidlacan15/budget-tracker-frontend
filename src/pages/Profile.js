@@ -6,10 +6,10 @@ export default function Profile() {
     <div>
       <Container>
         <Row>
-          <Col>
+          <Col className="md-auto">
             <IncomeAddForm />
           </Col>
-          <Col>
+          <Col className="md-auto">
             <ExpenseAddForm />
           </Col>
         </Row>

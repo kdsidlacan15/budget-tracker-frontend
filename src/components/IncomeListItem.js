@@ -1,4 +1,4 @@
-import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { Card, Button, Container, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function IncomeListItem({ income }) {
