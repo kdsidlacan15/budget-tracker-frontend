@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ApplicationContext } from "../contexts/ApplicationContext";
 
 export default function ExpenseListItem({ expense, setLastDeletedExpense }) {
-  const { user } = useContext(ApplicationContext);
+  // const { user } = useContext(ApplicationContext);
 
   const handleClickDelete = () => {
     let access = localStorage.getItem("token");

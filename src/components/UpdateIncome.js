@@ -2,7 +2,7 @@ import { Card, Form, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function UpdateIncome({ income }) {
+export default function UpdateIncome({ income, setLastUpdatedIncome }) {
   const [currentIncome, setCurrentIncome] = useState({});
 
   const handleChange = (e) => {
@@ -12,35 +12,36 @@ export default function UpdateIncome({ income }) {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   fetch(`http://localhost:4000/api/income/${income._id}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(currentIncome),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setCurrentIncome(data))
-  //     .catch((err) => console.log(err));
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch(`http://localhost:4000/api/income/${income._id}`, {
+      method: "PUT",
+      body: JSON.stringify(currentIncome),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setLastUpdatedIncome(data))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Card>
       <Card.Body>
-        <Form>
-          <Form.Group controlId="name">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="category">
             <Form.Label>Category:</Form.Label>
             <Form.Control type="text" onChange={handleChange} />
           </Form.Group>
-          <Form.Group controlId="description">
+          <Form.Group controlId="entry">
             <Form.Label>Entry:</Form.Label>
             <Form.Control type="text" onChange={handleChange} />
           </Form.Group>
 
-          <Form.Group controlId="price">
+          <Form.Group controlId="value">
             <Form.Label>Value:</Form.Label>
             <Form.Control type="number" min="0" onChange={handleChange} />
           </Form.Group>

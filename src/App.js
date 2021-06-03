@@ -32,7 +32,7 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/income">
+            <Route exact path="/income">
               <IncomePage />
             </Route>
             <Route path="/expense">
@@ -47,7 +47,7 @@ function App() {
             <Route path="/LoggedUserPage">
               <LoggedUserPage />
             </Route>
-            <Route path="/IncomeSingle">
+            <Route path="/income/:id">
               <IncomeSingle />
             </Route>
             <Route path="/Profile">

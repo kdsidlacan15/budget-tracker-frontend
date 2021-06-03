@@ -1,11 +1,9 @@
-import { Col, Table } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import IncomeListItem from "./IncomeListItem";
 import { useContext, useEffect, useState } from "react";
-import ApplicationContext from "./../contexts/ApplicationContext";
 
 export default function IncomeList() {
   const [income, setIncome] = useState([]);
-  const [lastDeletedIncome, setLastDeletedIncome] = useState({});
 
   useEffect(() => {
     let access = localStorage.getItem("token");
@@ -21,20 +19,19 @@ export default function IncomeList() {
       })
 
       .catch((err) => console.log(err));
-  }, [lastDeletedIncome]);
+  }, []);
 
   const incomeDisplay = income.map((income) => {
     return (
-      <tr>
-        <td>
-          <IncomeListItem
-            income={income}
-            setLastDeletedIncome={setLastDeletedIncome}
-          />
-        </td>
-      </tr>
+      <Col xs={12} sm={6} md={4} lg={3} key={income._id}>
+        <IncomeListItem income={income} />
+      </Col>
     );
   });
 
-  return <Col>{incomeDisplay}</Col>;
+  return (
+    <Container>
+      <Row>{incomeDisplay}</Row>
+    </Container>
+  );
 }

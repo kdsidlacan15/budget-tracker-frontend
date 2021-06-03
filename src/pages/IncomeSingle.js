@@ -2,6 +2,7 @@ import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import UpdateIncome from "./../components/UpdateIncome";
+import IncomeListItem from "./../components/IncomeListItem";
 
 export default function IncomeSingle() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ export default function IncomeSingle() {
       .then((res) => res.json())
       .then((data) => {
         setIncome(data);
+        console.log(data);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
@@ -23,7 +25,19 @@ export default function IncomeSingle() {
     <Container>
       <Row>
         <Col xs={12} sm={10} md={6} className="mx-auto">
-          <UpdateIncome income={income} />
+          {isLoading ? (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden"></span>
+            </Spinner>
+          ) : (
+            <IncomeListItem income={income} />
+          )}
+        </Col>
+        <Col>
+          <UpdateIncome
+            income={income}
+            setLastUpdatedIncome={setLastUpdatedIncome}
+          />
         </Col>
       </Row>
     </Container>

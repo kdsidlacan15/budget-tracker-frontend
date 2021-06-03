@@ -17,6 +17,7 @@ export default function IncomeTableComp() {
         setIncome(data);
         console.log(data);
       })
+
       .catch((err) => console.log(err));
   }, [lastDeletedIncome]);
 
@@ -26,6 +27,7 @@ export default function IncomeTableComp() {
       fetch(`http://localhost:4000/api/income/${income._id}`, {
         method: "DELETE",
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${access}`,
         },
       })
@@ -59,7 +61,7 @@ export default function IncomeTableComp() {
               className="mx-1"
               size="sm"
               as={Link}
-              to="/IncomeSingle"
+              to={`/income/${income._id}`}
             >
               Update
             </Button>{" "}
