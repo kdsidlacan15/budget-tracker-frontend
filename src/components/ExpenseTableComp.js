@@ -22,12 +22,15 @@ export default function ExpenseTableComp() {
   const expenseDisplay = expense.map((expense, index) => {
     const handleClickDelete = () => {
       let access = localStorage.getItem("token");
-      fetch(`http://localhost:4000/api/expenses/${expense._id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${access}`,
-        },
-      })
+      fetch(
+        `https://stark-reef-70845.herokuapp.com/api/expenses/${expense._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${access}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setLastDeletedExpense(data);
