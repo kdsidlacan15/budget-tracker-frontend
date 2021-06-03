@@ -1,10 +1,9 @@
-import { Col, Table } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import ExpenseListItem from "./ExpenseListItem";
 import { useEffect, useState } from "react";
 
 export default function ExpenseList() {
   const [expense, setExpense] = useState([]);
-  const [lastDeletedExpense, setLastDeletedExpense] = useState({});
 
   useEffect(() => {
     let access = localStorage.getItem("token");
@@ -20,18 +19,19 @@ export default function ExpenseList() {
       })
 
       .catch((err) => console.log(err));
-  }, [lastDeletedExpense]);
+  }, []);
 
   const expenseDisplay = expense.map((expense) => {
     return (
       <Col xs={12} sm={6} md={4} lg={3} key={expense._id}>
-        <ExpenseListItem
-          expense={expense}
-          setLastDeletedExpense={setLastDeletedExpense}
-        />
+        <ExpenseListItem expense={expense} />
       </Col>
     );
   });
 
-  return <Col>{expenseDisplay}</Col>;
+  return (
+    <Container>
+      <Row>{expenseDisplay}</Row>
+    </Container>
+  );
 }

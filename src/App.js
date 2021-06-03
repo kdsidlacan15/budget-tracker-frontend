@@ -6,11 +6,9 @@ import Register from "./pages/Register";
 import IncomePage from "./pages/IncomePage";
 import ExpensePage from "./pages/ExpensePage";
 import ApplicationsProvider from "./contexts/ApplicationContext";
-import IncomeTransactionListPage from "./pages/IncomeTransactionListPage";
-import ExpenseTransactionListPage from "./pages/ExpenseTransactionListPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LoggedUserPage from "./pages/LoggedUserPage";
 import IncomeSingle from "./pages/IncomeSingle";
+import ExpenseSingle from "./pages/ExpenseSingle";
 import Profile from "./pages/Profile";
 import IncomeTable from "./pages/IncomeTable";
 import ExpenseTable from "./pages/ExpenseTable";
@@ -35,20 +33,14 @@ function App() {
             <Route exact path="/income">
               <IncomePage />
             </Route>
-            <Route path="/expense">
+            <Route exact path="/expense">
               <ExpensePage />
-            </Route>
-            <Route path="/IncomeTransactionListPage">
-              <IncomeTransactionListPage />
-            </Route>
-            <Route path="/ExpenseTransactionListPage">
-              <ExpenseTransactionListPage />
-            </Route>
-            <Route path="/LoggedUserPage">
-              <LoggedUserPage />
             </Route>
             <Route path="/income/:id">
               <IncomeSingle />
+            </Route>
+            <Route path="/expense/:id">
+              <ExpenseSingle />
             </Route>
             <Route path="/Profile">
               <Profile />

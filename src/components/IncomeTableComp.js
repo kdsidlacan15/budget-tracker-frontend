@@ -1,7 +1,7 @@
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import UpdateIncome from "./UpdateIncome";
+import { useEffect, useState } from "react";
+
 export default function IncomeTableComp() {
   const [income, setIncome] = useState([]);
   const [lastDeletedIncome, setLastDeletedIncome] = useState({});
@@ -91,6 +91,17 @@ export default function IncomeTableComp() {
                 <th>Entry</th>
                 <th>Value</th>
                 <th>Manage Transaction</th>
+                <th>
+                  <Button
+                    className="mx-1"
+                    variant="outline-dark"
+                    size="sm"
+                    as={Link}
+                    to="/Profile"
+                  >
+                    Back
+                  </Button>{" "}
+                </th>
               </tr>
             </thead>
             {incomeDisplay}

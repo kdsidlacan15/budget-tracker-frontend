@@ -1,10 +1,8 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ApplicationContext } from "../contexts/ApplicationContext";
 
 export default function IncomeListItem({ income }) {
-  const { user } = useContext(ApplicationContext);
+  // const { user } = useContext(ApplicationContext);
 
   return (
     <Card>

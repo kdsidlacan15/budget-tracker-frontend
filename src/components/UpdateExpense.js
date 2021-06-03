@@ -1,12 +1,12 @@
 import { Card, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
-export default function UpdateIncome({ income, setLastUpdatedIncome }) {
-  const [currentIncome, setCurrentIncome] = useState({});
+export default function UpdateExpense({ expense, setLastUpdatedExpense }) {
+  const [currentExpense, setCurrentExpense] = useState({});
 
   const handleChange = (e) => {
-    setCurrentIncome({
-      ...currentIncome,
+    setCurrentExpense({
+      ...currentExpense,
       [e.target.id]: e.target.value,
     });
   };
@@ -14,16 +14,16 @@ export default function UpdateIncome({ income, setLastUpdatedIncome }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:4000/api/income/${income._id}`, {
+    fetch(`http://localhost:4000/api/expenses/${expense._id}`, {
       method: "PUT",
-      body: JSON.stringify(currentIncome),
+      body: JSON.stringify(currentExpense),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
-      .then((data) => setLastUpdatedIncome(data))
+      .then((data) => setLastUpdatedExpense(data))
       .catch((err) => console.log(err));
   };
 

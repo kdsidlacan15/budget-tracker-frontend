@@ -1,6 +1,6 @@
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 export default function ExpenseTableComp() {
   const [expense, setExpense] = useState([]);
   const [lastDeletedExpense, setLastDeletedExpense] = useState({});
@@ -58,7 +58,7 @@ export default function ExpenseTableComp() {
               className="mx-1"
               size="sm"
               as={Link}
-              to="/Update"
+              to={`/expense/${expense._id}`}
             >
               Update
             </Button>{" "}
@@ -88,6 +88,17 @@ export default function ExpenseTableComp() {
                 <th>Entry</th>
                 <th>Value</th>
                 <th>Manage Transaction</th>
+                <th>
+                  <Button
+                    className="mx-1"
+                    variant="outline-dark"
+                    size="sm"
+                    as={Link}
+                    to="/Profile"
+                  >
+                    Back
+                  </Button>{" "}
+                </th>
               </tr>
             </thead>
             {expenseDisplay}
