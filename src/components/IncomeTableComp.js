@@ -44,6 +44,7 @@ export default function IncomeTableComp() {
           <td>{income.category}</td>
           <td>{income.entry}</td>
           <td>{income.value}</td>
+          <td>{income.createdAt}</td>
           <td>
             {" "}
             <Button
@@ -81,6 +82,7 @@ export default function IncomeTableComp() {
                 <th>Category</th>
                 <th>Entry</th>
                 <th>Value</th>
+                <th>Date</th>
                 <th>Manage Transaction</th>
                 <th>
                   <Button

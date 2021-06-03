@@ -44,6 +44,7 @@ export default function ExpenseTableComp() {
           <td>{expense.category}</td>
           <td>{expense.entry}</td>
           <td>{expense.value}</td>
+          <td>{expense.createdAt}</td>
           <td>
             {" "}
             <Button
@@ -81,6 +82,7 @@ export default function ExpenseTableComp() {
                 <th>Category</th>
                 <th>Entry</th>
                 <th>Value</th>
+                <th>Date</th>
                 <th>Manage Transaction</th>
                 <th>
                   <Button
